@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shrinkColumns="*"
+        android:stretchColumns="*" >
+
+        <TableRow
+            android:id="@+id/tableRow0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/TextViewMes"
+                android:layout_width="0dp"
+                android:layout_weight=".18"
+                android:gravity="center_horizontal"
+                android:text="@string/month"
+                android:textStyle="bold" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/TextViewDeuda"
+                android:layout_width="0dp"
+                android:layout_weight=".25"
+                android:gravity="center_horizontal"
+                android:text="@string/debt"
+                android:textStyle="bold" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/TextViewAmortizacion"
+                android:layout_width="0dp"
+                android:layout_weight=".40"
+                android:gravity="center_horizontal"
+                android:text="@string/amortization"
+                android:textStyle="bold" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/TextViewIntereses"
+                android:layout_width="0dp"
+                android:layout_weight=".25"
+                android:gravity="center_horizontal"
+                android:text="@string/interests"
+                android:textStyle="bold" >
+            </TextView>
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>
