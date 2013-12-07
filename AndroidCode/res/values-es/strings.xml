@@ -14,8 +14,8 @@
     <string name="years">Años:</string>
     <string name="interest_good">Interés mensual: </string>
     <string name="interest_bad">Interés mensual (fórmula aproximada): </string>
-    <string name="monthly_fee_good">Cuota mensual: </string>
-    <string name="monthly_fee_bad">Cuota mensual (fórmula aproximada): </string>
+    <string name="monthly_fee_good">Cuota: </string>
+    <string name="monthly_fee_bad">Cuota (fórmula aproximada): </string>
     <string name="payment_more">Pago de más al año:  </string>
     <string name="payment_more_lending">Pago de más durante todo el préstamo: </string>
     <string name="month_minus">mes </string>
