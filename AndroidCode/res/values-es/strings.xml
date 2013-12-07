@@ -12,8 +12,8 @@
     <string name="mortgage_capital">Capital de la hipoteca:</string>
     <string name="annual_interest">Interés anual (%):</string>
     <string name="years">Años:</string>
-    <string name="interest_good">Interés mensual: </string>
-    <string name="interest_bad">Interés mensual (fórmula aproximada): </string>
+    <string name="months">Meses:</string>
+    <string name="interest_bad">Tipo de interés (fórmula aproximada): </string>
     <string name="monthly_fee_good">Cuota: </string>
     <string name="monthly_fee_bad">Cuota (fórmula aproximada): </string>
     <string name="payment_more">Pago de más al año:  </string>
@@ -24,6 +24,7 @@
     <string name="calculating">Calculando...</string>
     <string name="title_activity_result">Resultados</string>
     <string name="month">Mes</string>
+    <string name="annual">(anual)</string>
     <string name="debt">Deuda</string>
     <string name="amortization">Amortización</string>
     <string name="interests">Intereses</string>
@@ -31,6 +32,7 @@
     <string name="important">El interés compuesto es el único tipo de interés usado en finanzas. Permite comparar productos y crear competencia. Sin embargo, la cuota de las hipotecas se calcula usando una fórmula aproximada, una mezcla entre interés simple y compuesto que sesga el resultado a favor del banco. A parte de crear confusión, la fórmula aproximada hará que cuando los tipos de interés suban, éstos crezcan todavía más para los hipotecados (EURIBOR + diferencial + error que crece más cuanto mayor sea el interés).\n\nEn el pasado, usar la fórmula exacta podía ser complejo. Sin embargo, hoy en día, incluso el teléfono de nuestro bolsillo puede calcularla. No hay excusa para seguir usando la aproximación.\n\nPor favor, cambien la legislación para que siempre se use la formula que directamente aplica el tipo anual efectivo (unidad de medida universal del tipo de interés).</string>
     <string name="sign">Firma la petición para cambiar esto</string>
     <string name="share">Comparte la aplicación</string>
+    <string name="share_via">Compartir</string>
     <string name="share_text">Descarga la nueva calculadora de hipoteca http://play.google.com/store/apps/details?id=com.arjonasoftware.mortgagecalculator</string>
     <string name="petition">http://www.avaaz.org/es/petition/Bancos_y_legisladores_Usen_la_formula_correcta_en_las_hipotecas/</string>
 

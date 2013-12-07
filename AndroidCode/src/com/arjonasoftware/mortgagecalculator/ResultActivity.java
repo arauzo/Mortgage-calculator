@@ -97,7 +97,7 @@ public class ResultActivity extends FragmentActivity {
 			sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT,
 					getResources().getString(R.string.share_text));
 			startActivity(Intent.createChooser(sharingIntent,
-					"Compartir mediante"));
+					getResources().getString(R.string.share_via)));
 			return true;
 
 		}
