@@ -88,7 +88,7 @@ public class DataActivity extends Activity {
 				String s_months = editText_months.getText().toString();
 				int months = Integer.parseInt(s_months);
 
-				if (months != 0) {
+				if (months > 0) {
 					months--;
 					editText_months.setText("" + months);
 				}
@@ -102,7 +102,7 @@ public class DataActivity extends Activity {
 				String s_months = editText_months.getText().toString();
 				int months = Integer.parseInt(s_months);
 
-				if (months != 12) {
+				if (months < 11) {
 					months++;
 					editText_months.setText("" + months);
 				}
