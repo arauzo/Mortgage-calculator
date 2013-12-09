@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">Mortgage calculator </string>
-    <string name="action_important">Why this is important?</string>
+    <string name="action_important">Why is this important?</string>
     <string name="action_share">Share this application</string>
     <string name="title_section1">Correct formula</string>
     <string name="title_section2">Approximate formula</string>
@@ -12,8 +12,8 @@
     <string name="mortgage_capital">Loan amount:</string>
     <string name="annual_interest">Annual interest (%):</string>
     <string name="years">Years:</string>
-    <string name="interest_good">Monthly interest: </string>
-    <string name="interest_bad">Monthly interest (approximate formula): </string>
+    <string name="months">Months:</string>
+    <string name="interest_bad">Interest rate (approximate formula): </string>
     <string name="monthly_fee_good">Payment: </string>
     <string name="monthly_fee_bad">Payment (approximate formula): </string>
     <string name="payment_more">Overpayment per year:  </string>
@@ -24,6 +24,7 @@
     <string name="calculating">Calculating...</string>
     <string name="title_activity_result">Results</string>
     <string name="month">Month</string>
+    <string name="annual">(annual)</string>
     <string name="debt">Debt</string>
     <string name="amortization">Amortization</string>
     <string name="interests">Interests</string>
@@ -31,6 +32,7 @@
     <string name="important">Compound interest is the only interest rate used in serious finances. It allows to compare products and to create competition. However, public mortgage quotas are calculated using an approximated formula (a mix between compound and simple interest). Apart from creating confusion, this makes mortgage interest rates to grow even greater when interest rates rise (as the approximation error gets larger).\n\nIn the old times, using the exact formula could be complex but, nowadays, even the phone on our pocket can calculate it. There is no excuse to continue using the approximated formula.\n\nPlease, change the law to force the use of the formula applying the effective annual interest rate (the universal interest rate unit).</string>
     <string name="sign">Sign the petition to change this</string>
     <string name="share">Share this application</string>
+    <string name="share_via">Share via</string>
     <string name="share_text">Download the new mortgage calculator https://play.google.com/store/apps/details?id=com.arjonasoftware.mortgagecalculator</string>
     <string name="petition">http://www.avaaz.org/en/petition/Bankers_and_lawmakers_Use_the_correct_formula_in_mortgages/</string>
 

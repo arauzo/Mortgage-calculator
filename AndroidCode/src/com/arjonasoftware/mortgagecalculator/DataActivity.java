@@ -35,12 +35,12 @@ public class DataActivity extends Activity {
 		final EditText editText_mortgage_capital = (EditText) findViewById(R.id.editText_mortgage_capital);
 		final EditText editText_annual_interest = (EditText) findViewById(R.id.editText_annual_interest);
 		final EditText editText_years = (EditText) findViewById(R.id.editText_years);
-
-		editText_mortgage_capital.clearFocus();
+		final TextView editText_months = (TextView) findViewById(R.id.editText_months);
 
 		editText_mortgage_capital.addTextChangedListener(TW);
 		editText_annual_interest.addTextChangedListener(TW);
 		editText_years.addTextChangedListener(TW);
+		editText_months.addTextChangedListener(TW);
 
 		Button button_see_amortization_tables = (Button) findViewById(R.id.button_see_amortization_tables);
 		button_see_amortization_tables
@@ -53,13 +53,14 @@ public class DataActivity extends Activity {
 						String s_annualInterest = editText_annual_interest
 								.getText().toString();
 						String s_years = editText_years.getText().toString();
+						String s_months = editText_months.getText().toString();
 
-						if (validate(s_mortgageCapital)
-								&& validate(s_annualInterest)
-								& validate(s_years)) {
+						if (!isEmpty(s_mortgageCapital)
+								&& !isEmpty(s_annualInterest)
+								&& !isEmpty(s_years)) {
 
 							new Calculate().execute(s_mortgageCapital,
-									s_annualInterest, s_years);
+									s_annualInterest, s_years, s_months);
 
 						} else {
 							Toast.makeText(
@@ -80,25 +81,45 @@ public class DataActivity extends Activity {
 			}
 		});
 
+		Button buttonMonthPlusMinus = (Button) findViewById(R.id.buttonMonthPlusMinus);
+		buttonMonthPlusMinus.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				TextView editText_months = (TextView) findViewById(R.id.editText_months);
+				String s_months = editText_months.getText().toString();
+				int months = Integer.parseInt(s_months);
+
+				if (months != 0) {
+					months--;
+					editText_months.setText("" + months);
+				}
+			}
+		});
+
+		Button buttonMonthPlus = (Button) findViewById(R.id.buttonMonthPlus);
+		buttonMonthPlus.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				TextView editText_months = (TextView) findViewById(R.id.editText_months);
+				String s_months = editText_months.getText().toString();
+				int months = Integer.parseInt(s_months);
+
+				if (months != 12) {
+					months++;
+					editText_months.setText("" + months);
+				}
+			}
+		});
+
 	}
 
-	public boolean validate(String s) {
+	public boolean isEmpty(String s) {
 
-		if (!(s.trim().length() == 0) && Float.parseFloat(s) > 0)
+		if ((s.trim().length() == 0))
 			return true;
 		else
 			return false;
 	}
 
 	private TextWatcher TW = new TextWatcher() {
-
-		public boolean validate(String s) {
-
-			if (!(s.trim().length() == 0) && Float.parseFloat(s) > 0)
-				return true;
-			else
-				return false;
-		}
 
 		@Override
 		public void onTextChanged(CharSequence s, int start, int before,
@@ -117,36 +138,41 @@ public class DataActivity extends Activity {
 			EditText editText_mortgage_capital = (EditText) findViewById(R.id.editText_mortgage_capital);
 			EditText editText_annual_interest = (EditText) findViewById(R.id.editText_annual_interest);
 			EditText editText_years = (EditText) findViewById(R.id.editText_years);
+			TextView editText_months = (TextView) findViewById(R.id.editText_months);
 
 			String s_mortgageCapital = editText_mortgage_capital.getText()
 					.toString();
 			String s_annualInterest = editText_annual_interest.getText()
 					.toString();
 			String s_years = editText_years.getText().toString();
+			String s_months = editText_months.getText().toString();
 
-			TextView interest_good = (TextView) findViewById(R.id.TextView_interest_good);
 			TextView interest_bad = (TextView) findViewById(R.id.TextView_interest_bad);
 			TextView monthly_fee_good = (TextView) findViewById(R.id.TextView_monthly_fee_good);
 			TextView monthly_fee_bad = (TextView) findViewById(R.id.TextView_monthly_fee_bad);
 			TextView payment_more = (TextView) findViewById(R.id.TextView_payment_more);
 			TextView payment_more_lending = (TextView) findViewById(R.id.TextView_payment_more_lending);
 
-			if (validate(s_mortgageCapital) && validate(s_annualInterest)
-					& validate(s_years)) {
+			if (!isEmpty(s_mortgageCapital) && !isEmpty(s_annualInterest)
+					&& !isEmpty(s_years)) {
 				Double mortgage_capital = Double.parseDouble(s_mortgageCapital);
 				Double annual_interest = (Double.parseDouble(s_annualInterest)) / 100;
-				Double years = Double.parseDouble(s_years);
+				int years = Integer.parseInt(s_years);
+				int months = Integer.parseInt(s_months);
 
 				double monthlyInterest = Math
 						.pow(1 + annual_interest, 1f / 12f) - 1;
 				double monthlyInterestApproximate = annual_interest / 12;
+				double anualInterestApproximate = Math.pow(
+						1 + monthlyInterestApproximate, 12) - 1;
 
 				double monthlyFee = (mortgage_capital * monthlyInterest)
-						/ (1 - 1 / Math.pow(1f + monthlyInterest, 12f * years));
+						/ (1 - 1 / Math.pow(1f + monthlyInterest, 12f * years
+								+ months));
 
 				double monthlyFeeApproximate = (mortgage_capital * monthlyInterestApproximate)
 						/ (1 - 1 / Math.pow(1f + monthlyInterestApproximate,
-								12f * years));
+								12f * years + months));
 
 				DecimalFormat df2 = new DecimalFormat("0.00");
 				DecimalFormat df3 = new DecimalFormat("0.000");
@@ -154,14 +180,14 @@ public class DataActivity extends Activity {
 				Currency currency = Currency.getInstance(Locale.getDefault());
 				String symbolCurrency = currency.getSymbol();
 
-				interest_good.setText(getResources().getString(
-						R.string.interest_good)
-						+ " " + df3.format(monthlyInterest * 100) + "%");
-				interest_bad.setText(getResources().getString(
-						R.string.interest_bad)
-						+ " "
-						+ df3.format(monthlyInterestApproximate * 100)
-						+ "%");
+				interest_bad
+						.setText(getResources()
+								.getString(R.string.interest_bad)
+								+ " "
+								+ df3.format(anualInterestApproximate * 100)
+								+ "%"
+								+ " "
+								+ getResources().getString(R.string.annual));
 
 				monthly_fee_good.setText(getResources().getString(
 						R.string.monthly_fee_good)
@@ -191,8 +217,6 @@ public class DataActivity extends Activity {
 						+ df2.format(d_payment_more * years)
 						+ symbolCurrency);
 			} else {
-				interest_good.setText(getResources().getString(
-						R.string.interest_good));
 				interest_bad.setText(getResources().getString(
 						R.string.interest_bad));
 
@@ -217,19 +241,22 @@ public class DataActivity extends Activity {
 			String s_mortgageCapital = params[0];
 			String s_annualInterest = params[1];
 			String s_years = params[2];
+			String s_months = params[3];
 
 			float mortgageCapital = Float.parseFloat(s_mortgageCapital);
 			float annualInterest = (Float.parseFloat(s_annualInterest)) / 100;
 			int years = Integer.parseInt(s_years);
+			int months = Integer.parseInt(s_months);
 
 			double monthlyInterest = Math.pow(1 + annualInterest, 1f / 12f) - 1;
 			double monthlyFee = (mortgageCapital * monthlyInterest)
-					/ (1 - 1 / Math.pow(1f + monthlyInterest, 12f * years));
+					/ (1 - 1 / Math.pow(1f + monthlyInterest, 12f * years
+							+ months));
 
 			double monthlyInterestApproximate = annualInterest / 12;
 			double monthlyFeeApproximate = (mortgageCapital * monthlyInterestApproximate)
-					/ (1 - 1 / Math.pow(1f + monthlyInterestApproximate,
-							12f * years));
+					/ (1 - 1 / Math.pow(1f + monthlyInterestApproximate, 12f
+							* years + months));
 
 			ArrayList<String> rowMonth = new ArrayList<String>();
 			ArrayList<String> rowDebt = new ArrayList<String>();
@@ -251,7 +278,7 @@ public class DataActivity extends Activity {
 			int tenPercentProgressBar = (12 * years) / 10;
 			int progressBar = 0;
 			int progressBarIterations = tenPercentProgressBar;
-			for (int i = 1; i <= 12 * years; i++) {
+			for (int i = 1; i <= 12 * years + months; i++) {
 				rowMonth.add("" + i);
 
 				// CORRECT
@@ -292,8 +319,14 @@ public class DataActivity extends Activity {
 			rowMonth.add("");
 			rowDebt.add("");
 			rowDebtApproximate.add("");
-			rowAmortization.add("");
-			rowAmortizationApproximate.add("");
+			rowAmortization
+					.add(getResources().getString(R.string.amount) + "\n"
+							+ df2.format(mortgageCapital) + " "
+							+ symbolCurrency);
+			rowAmortizationApproximate
+					.add(getResources().getString(R.string.amount) + "\n"
+							+ df2.format(mortgageCapital) + " "
+							+ symbolCurrency);
 
 			rowInterests.add(getResources().getString(R.string.amount) + "\n"
 					+ df2.format(interestsCount) + " " + symbolCurrency);
@@ -391,8 +424,8 @@ public class DataActivity extends Activity {
 			sharingIntent.setType("text/plain");
 			sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT,
 					getResources().getString(R.string.share_text));
-			startActivity(Intent.createChooser(sharingIntent,
-					"Compartir mediante"));
+			startActivity(Intent.createChooser(sharingIntent, getResources()
+					.getString(R.string.share_via)));
 			return true;
 
 		}

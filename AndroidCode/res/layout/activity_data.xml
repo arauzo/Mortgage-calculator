@@ -53,30 +53,11 @@
             android:inputType="numberDecimal" />
 
         <TextView
-            android:id="@+id/TextView_years"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/editText_annual_interest"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_marginTop="20dp"
-            android:text="@string/years" />
-
-        <EditText
-            android:id="@+id/editText_years"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/TextView_years"
-            android:layout_centerHorizontal="true"
-            android:ems="10"
-            android:inputType="numberDecimal" />
-
-        <TextView
             android:id="@+id/TextView_monthly_fee_good"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_below="@+id/editText_years"
+            android:layout_below="@+id/periodLayout"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="30dp"
@@ -95,22 +76,11 @@
             android:text="@string/monthly_fee_bad" />
 
         <TextView
-            android:id="@+id/TextView_interest_good"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/TextView_monthly_fee_bad"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/interest_good" />
-
-        <TextView
             android:id="@+id/TextView_interest_bad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_below="@+id/TextView_interest_good"
+            android:layout_below="@+id/TextView_monthly_fee_bad"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
@@ -157,6 +127,113 @@
             android:layout_centerVertical="true"
             android:layout_marginTop="20dp"
             android:text="@string/title_activity_important" />
+
+        <TableLayout
+            android:id="@+id/periodLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_annual_interest"
+            android:layout_marginTop="60dp"
+            android:stretchColumns="1,3" >
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".50"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/years" />
+
+                    <TableLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:stretchColumns="*" >
+
+                        <TableRow>
+
+                            <EditText
+                                android:id="@+id/editText_years"
+                                android:layout_width="5sp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="1dip"
+                                android:gravity="center"
+                                android:inputType="number" />
+                        </TableRow>
+                    </TableLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".50"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/TextView_months"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/months" />
+
+                    <TableLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:stretchColumns="*" >
+
+                        <TableRow>
+
+                            <Button
+                                android:id="@+id/buttonMonthPlusMinus"
+                                android:layout_width="30sp"
+                                android:layout_height="40dip"
+                                android:text="  -  "
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/editText_months"
+                                android:layout_width="30sp"
+                                android:layout_height="40dip"
+                                android:layout_marginTop="1dip"
+                                android:gravity="center"
+                                android:text="0" />
+
+                            <Button
+                                android:id="@+id/buttonMonthPlus"
+                                android:layout_width="30sp"
+                                android:layout_height="40dip"
+                                android:text="  +  "
+                                android:textStyle="bold" />
+                        </TableRow>
+                    </TableLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
     </RelativeLayout>
 
 </ScrollView>
