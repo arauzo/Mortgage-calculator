@@ -2,13 +2,13 @@
 <resources>
 
     <string name="app_name">Mortgage calculator </string>
-    <string name="action_important">Why is this important?</string>
+    <string name="action_important">Why the difference?</string>
     <string name="action_share">Share this application</string>
     <string name="title_section1">Correct formula</string>
     <string name="title_section2">Approximate formula</string>
-    <string name="title_section3">Why this is important?</string>
+    <string name="title_section3">Why the difference?</string>
     <string name="title_activity_data">Entering data</string>
-    <string name="title_activity_important">Why this is important?</string>
+    <string name="title_activity_important">Why the difference?</string>
     <string name="mortgage_capital">Loan amount:</string>
     <string name="annual_interest">Annual interest (%):</string>
     <string name="years">Years:</string>
@@ -29,8 +29,8 @@
     <string name="amortization">Amortization</string>
     <string name="interests">Interests</string>
     <string name="amount">Amount: </string>
-    <string name="important">Compound interest is the only interest rate used in serious finances. It allows to compare products and to create competition. However, public mortgage quotas are calculated using an approximated formula (a mix between compound and simple interest). Apart from creating confusion, this makes mortgage interest rates to grow even greater when interest rates rise (as the approximation error gets larger).\n\nIn the old times, using the exact formula could be complex but, nowadays, even the phone on our pocket can calculate it. There is no excuse to continue using the approximated formula.\n\nPlease, change the law to force the use of the formula applying the effective annual interest rate (the universal interest rate unit).</string>
-    <string name="sign">Sign the petition to change this</string>
+    <string name="important">Compound interest is the only interest rate used in serious finances. It allows to compare products and to create competition. However, public mortgage quotas are calculated using an approximated formula (a mix between compound and simple interest). Apart from creating confusion, this makes mortgage interest rates to grow even greater when interest rates rise (as the approximation error gets larger).\n\nIn the old times, using the exact formula could be complex but, nowadays, even the phone on our pocket can calculate it. There is no excuse to continue using the approximated formula.\n\nWe are promoting a petition to change the law to force the use of the formula applying the effective annual interest rate (the universal interest rate unit).</string>
+    <string name="sign">Sign the petition in the web</string>
     <string name="share">Share this application</string>
     <string name="share_via">Share via</string>
     <string name="share_text">Download the new mortgage calculator https://play.google.com/store/apps/details?id=com.arjonasoftware.mortgagecalculator</string>

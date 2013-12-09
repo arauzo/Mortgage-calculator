@@ -2,13 +2,13 @@
 <resources>
 
     <string name="app_name">Calculadora hipoteca</string>
-    <string name="action_important">¿Por qué esto es importante?</string>
+    <string name="action_important">¿Por qué la diferencia?</string>
     <string name="action_share">Comparte la aplicación</string>
     <string name="title_section1">Fórmula correcta</string>
     <string name="title_section2">Fórmula aproximada</string>
-    <string name="title_section3">¿Por qué esto es importante?</string>
+    <string name="title_section3">¿Por qué la diferencia?</string>
     <string name="title_activity_data">Introducir datos</string>
-    <string name="title_activity_important">¿Por qué esto es importante?</string>
+    <string name="title_activity_important">¿Por qué la diferencia?</string>
     <string name="mortgage_capital">Capital de la hipoteca:</string>
     <string name="annual_interest">Interés anual (%):</string>
     <string name="years">Años:</string>
@@ -29,8 +29,8 @@
     <string name="amortization">Amortización</string>
     <string name="interests">Intereses</string>
     <string name="amount">Total:</string>
-    <string name="important">El interés compuesto es el único tipo de interés usado en finanzas. Permite comparar productos y crear competencia. Sin embargo, la cuota de las hipotecas se calcula usando una fórmula aproximada, una mezcla entre interés simple y compuesto que sesga el resultado a favor del banco. A parte de crear confusión, la fórmula aproximada hará que cuando los tipos de interés suban, éstos crezcan todavía más para los hipotecados (EURIBOR + diferencial + error que crece más cuanto mayor sea el interés).\n\nEn el pasado, usar la fórmula exacta podía ser complejo. Sin embargo, hoy en día, incluso el teléfono de nuestro bolsillo puede calcularla. No hay excusa para seguir usando la aproximación.\n\nPor favor, cambien la legislación para que siempre se use la formula que directamente aplica el tipo anual efectivo (unidad de medida universal del tipo de interés).</string>
-    <string name="sign">Firma la petición para cambiar esto</string>
+    <string name="important">El interés compuesto es el único tipo de interés usado en finanzas. Permite comparar productos y crear competencia. Sin embargo, la cuota de las hipotecas se calcula usando una fórmula aproximada, una mezcla entre interés simple y compuesto que sesga el resultado a favor del banco. A parte de crear confusión, la fórmula aproximada hará que cuando los tipos de interés suban, éstos crezcan todavía más para los hipotecados (EURIBOR + diferencial + error que crece más cuanto mayor sea el interés).\n\nEn el pasado, usar la fórmula exacta podía ser complejo. Sin embargo, hoy en día, incluso el teléfono de nuestro bolsillo puede calcularla. No hay excusa para seguir usando la aproximación.\n\nEstamos promoviendo una petición para que se cambie la legislación y siempre se use la formula que directamente aplica el tipo anual efectivo (unidad de medida universal del tipo de interés).</string>
+    <string name="sign">Firma la petición en la web</string>
     <string name="share">Comparte la aplicación</string>
     <string name="share_via">Compartir</string>
     <string name="share_text">Descarga la nueva calculadora de hipoteca http://play.google.com/store/apps/details?id=com.arjonasoftware.mortgagecalculator</string>
